@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <Button
-        android:id="@+id/handlerbutton"
+        android:id="@+id/handlerbutton0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="not click" />
+        android:layout_gravity="center"
+        android:text="未经处理的Handler(泄露62kb)" />
+
+    <Button
+        android:id="@+id/handlerbutton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="静态Handler(不泄露)" />
+
+    <Button
+        android:id="@+id/handlerbutton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="持有Activity里的Button的强引用(泄露5.2kb)" />
+
+    <Button
+        android:id="@+id/handlerbutton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="持有一个字符串(不泄露)" />
+
+    <Button
+        android:id="@+id/handlerbutton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="持有Activity中的Button的弱引用(不泄露)" />
 
 
-</RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/forest" />
+
+</LinearLayout>
